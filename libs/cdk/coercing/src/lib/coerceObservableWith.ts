@@ -7,8 +7,8 @@ import { coerceObservable } from './coerceObservable';
  *
  */
 export function coerceObservableWith<T>(): OperatorFunction<
-  Observable<T | null | undefined> | T | null | undefined,
-  Observable<T | null | undefined>
+  Observable<T> | T,
+  Observable<T>
 > {
   return (o$: Observable<Observable<T> | T>) => map(coerceObservable)(o$);
 }
